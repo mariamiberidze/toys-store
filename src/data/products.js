@@ -1,7 +1,6 @@
 // src/data/products.js
 
-const IMAGE_WIDTH = 300;
-const IMAGE_HEIGHT = 200;
+const IMAGE_SIZE = "300x200";
 
 const products = [
   {
@@ -11,8 +10,8 @@ const products = [
     age: "5-8",
     category: "განვითარებადი",
     gender: "ბიჭისთვის",
-    // ექნება იდენტური სურათი ყოველთვის (ID 1-ის გამო)
-    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=1`,
+    // იყენებს placehold.co-ს: https://placehold.co/300x200/007bff/FFFFFF?text=ROBOT
+    image: `https://placehold.co/${IMAGE_SIZE}/007bff/FFFFFF?text=ROBOT+TOY`,
   },
   {
     id: 2,
@@ -21,7 +20,7 @@ const products = [
     age: "8+",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=2`,
+    image: `https://placehold.co/${IMAGE_SIZE}/28a745/FFFFFF?text=LEGO+SET`,
   },
   {
     id: 3,
@@ -30,7 +29,7 @@ const products = [
     age: "3-5",
     category: "სტანდარტული",
     gender: "გოგოსთვის",
-    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=3`,
+    image: `https://placehold.co/${IMAGE_SIZE}/ffc107/333333?text=DOLL`,
   },
   {
     id: 4,
@@ -39,7 +38,7 @@ const products = [
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=4`,
+    image: `https://placehold.co/${IMAGE_SIZE}/6f42c1/FFFFFF?text=WOOD+TOY`,
   },
   {
     id: 5,
@@ -48,7 +47,7 @@ const products = [
     age: "5-8",
     category: "სტანდარტული",
     gender: "ბიჭისთვის",
-    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=5`,
+    image: `https://placehold.co/${IMAGE_SIZE}/dc3545/FFFFFF?text=CAR+TRACK`,
   },
 ];
 
