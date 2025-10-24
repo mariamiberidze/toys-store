@@ -1,3 +1,8 @@
+// src/data/products.js
+
+const IMAGE_WIDTH = 300;
+const IMAGE_HEIGHT = 200;
+
 const products = [
   {
     id: 1,
@@ -6,6 +11,8 @@ const products = [
     age: "5-8",
     category: "განვითარებადი",
     gender: "ბიჭისთვის",
+    // ექნება იდენტური სურათი ყოველთვის (ID 1-ის გამო)
+    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=1`,
   },
   {
     id: 2,
@@ -14,6 +21,7 @@ const products = [
     age: "8+",
     category: "განვითარებადი",
     gender: "ყველასთვის",
+    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=2`,
   },
   {
     id: 3,
@@ -22,6 +30,7 @@ const products = [
     age: "3-5",
     category: "სტანდარტული",
     gender: "გოგოსთვის",
+    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=3`,
   },
   {
     id: 4,
@@ -30,6 +39,7 @@ const products = [
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
+    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=4`,
   },
   {
     id: 5,
@@ -38,6 +48,7 @@ const products = [
     age: "5-8",
     category: "სტანდარტული",
     gender: "ბიჭისთვის",
+    image: `https://picsum.photos/${IMAGE_WIDTH}/${IMAGE_HEIGHT}?random=5`,
   },
 ];
 
