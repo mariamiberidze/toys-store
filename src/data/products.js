@@ -1,185 +1,206 @@
-// src/data/products.js - ძლიერ გაფართოებული სია 0+ ასაკისთვის
+// src/data/products.js - განახლებული სია Pexels-ის რეალური სურათების გამოყენებით
 
-const IMAGE_SIZE = "300x200";
+// Pexels-ის პირდაპირი ლინკის ფორმატი:
+const getPexelsImage = (id) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=300`;
 
 const products = [
-  // --- 0-2 წლის ასაკისთვის (განმავითარებელი) ---
+  // --- 0-2 წლის ასაკისთვის (ხის და რბილი სათამაშოები) ---
   {
     id: 1,
-    name: "რბილი სათამაშო (დათუნია)",
-    price: 18.0,
+    name: "ხის პატარა ცხენი (ქანა)",
+    price: 35.0,
     age: "0-2",
     category: "სტანდარტული",
     gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/ffeb3b/333333?text=CUDDLY+BEAR+PLUSH`,
+    // 7938006: ხის ქანა ცხენი (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("7938006"),
   },
   {
     id: 2,
-    name: "ხის ასაწყობი კოშკი (რინგები)",
+    name: "ხის ასაწყობი კოშკი (დიდი)",
     price: 15.0,
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/6f42c1/FFFFFF?text=WOODEN+RINGS+TOWER`,
+    // 6692878: ბავშვი ხის კოშკით თამაშობს (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("6692878"),
   },
   {
     id: 3,
-    name: "ხის პაზლი (ფორმების დამხარისხებელი)",
-    price: 32.5,
+    name: "რბილი სათამაშო (დათუნია)",
+    price: 22.5,
     age: "0-2",
-    category: "განვითარებადი",
+    category: "სტანდარტული",
     gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/e91e63/FFFFFF?text=WOOD+SHAPE+SORTER`,
+    // 1029208: დათუნია საქანელაზე (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("1029208"),
   },
   {
     id: 4,
-    name: "აქტივობის ხალიჩა (პიანინოთი)",
-    price: 75.0,
+    name: "საგანმანათლებლო პლაკატი",
+    price: 12.0,
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/33c4ff/FFFFFF?text=BABY+GYM+MAT`,
+    // 7335412: ფერადი ასოები/აბები (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("7335412"),
   },
   {
     id: 5,
-    name: "მუსიკალური ჭოჭინა",
-    price: 45.99,
+    name: "აქტივობის ხალიჩა",
+    price: 75.99,
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/a0c49d/333333?text=MUSICAL+WALKER`,
+    // 26219895: ბავშვი ეტლთან და სათამაშო ავეჯთან
+    image: getPexelsImage("26219895"),
   },
-
-  // --- 3-5 წლის ასაკისთვის (როლური თამაშები, კრეატივი) ---
   {
     id: 6,
-    name: "პატარა თოჯინა (მეგობარი)",
+    name: "სენსორული ხის სათამაშო (ფრინველი)",
+    price: 18.0,
+    age: "0-2",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    // 6219111: ხის ფრინველი (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("6219111"),
+  },
+
+  // --- 3-5 წლის ასაკისთვის (ხის, როლური თამაში) ---
+  {
+    id: 7,
+    name: "ხის სათამაშო კამერა",
+    price: 29.0,
+    age: "3-5",
+    category: "სტანდარტული",
+    gender: "ყველასთვის",
+    // 6941683: ხის კამერა (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("6941683"),
+  },
+  {
+    id: 8,
+    name: "ფერადი ხის კონსტრუქტორი",
+    price: 49.99,
+    age: "3-5",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    // 1595087: ფერადი ხის ბლოკები (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("1595087"),
+  },
+  {
+    id: 9,
+    name: "ხის დახარისხება (წრეები)",
+    price: 38.0,
+    age: "3-5",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    // 7269670: ხის დახარისხების თამაში (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("7269670"),
+  },
+  {
+    id: 10,
+    name: "თოჯინის ტანსაცმლის ნაკრები",
     price: 25.0,
     age: "3-5",
     category: "სტანდარტული",
     gender: "გოგოსთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/ffc107/333333?text=FASHION+DOLL+TOY`,
+    // 1639729: პატარა კაბა (დამატებულია Pexels-დან)
+    image: getPexelsImage("1639729"),
   },
   {
-    id: 7,
-    name: "სამზარეულოს ნაკრები (ხის, დიდი)",
-    price: 59.99,
+    id: 11,
+    name: "პატარა თვითმფრინავის მოდელი",
+    price: 19.99,
     age: "3-5",
     category: "სტანდარტული",
-    gender: "გოგოსთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/795548/FFFFFF?text=WOOD+KITCHEN+SET`,
+    gender: "ბიჭისთვის",
+    // 255514: პატარა თვითმფრინავი (თქვენს მიერ მოწოდებული)
+    image: getPexelsImage("255514"),
   },
   {
-    id: 8,
-    name: "მაგნიტური სამშენებლო ფილები (50 ც.)",
-    price: 75.0,
-    age: "3-5",
-    category: "განვითარებადი",
-    gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/9c27b0/FFFFFF?text=MAGNA+TILES+BUILD`,
-  },
-  {
-    id: 9,
-    name: "ხელოვნების ნაკრები (გუაში/ფანქრები)",
-    price: 22.99,
-    age: "3-5",
-    category: "განვითარებადი",
-    gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/8bc34a/FFFFFF?text=KIDS+ART+KIT`,
-  },
-  {
-    id: 10,
-    name: "პლასტელინის ნაკრები (დიდი)",
+    id: 12,
+    name: "პლასტელინის ნაკრები",
     price: 28.5,
     age: "3-5",
     category: "სტანდარტული",
     gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/e67e22/FFFFFF?text=CLAY+PLAY+DOUGH+SET`,
-  },
-  {
-    id: 11,
-    name: "საექიმო როლური თამაში",
-    price: 35.0,
-    age: "3-5",
-    category: "განვითარებადი",
-    gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/f0f8ff/333333?text=DOCTOR+KIT`,
+    // 4165991: ფერადი პლასტელინი (დამატებულია Pexels-დან)
+    image: getPexelsImage("4165991"),
   },
 
-  // --- 5-8 წლის ასაკისთვის (ლოგიკა, აქტივობა) ---
+  // --- 5-8 წლის ასაკისთვის (კონსტრუქცია, რობოტიკა) ---
   {
-    id: 12,
+    id: 13,
     name: "რობოტი ტრანსფორმერი (მოდელი)",
     price: 45.99,
     age: "5-8",
     category: "განვითარებადი",
     gender: "ბიჭისთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/007bff/FFFFFF?text=MECH+ROBOT+TOY`,
+    // 3862601: პატარა რობოტი (დამატებულია Pexels-დან)
+    image: getPexelsImage("3862601"),
   },
   {
-    id: 13,
+    id: 14,
+    name: "დიდი თოჯინების სახლი",
+    price: 120.0,
+    age: "5-8",
+    category: "განვითარებადი",
+    gender: "გოგოსთვის",
+    // 2100863: თოჯინების სახლი (დამატებულია Pexels-დან)
+    image: getPexelsImage("2100863"),
+  },
+  {
+    id: 15,
     name: "მანქანის ტრეკი (დიდი)",
     price: 55.0,
     age: "5-8",
     category: "სტანდარტული",
     gender: "ბიჭისთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/dc3545/FFFFFF?text=RACE+CAR+TRACK`,
+    // 3396590: სათამაშო მანქანები (დამატებულია Pexels-დან)
+    image: getPexelsImage("3396590"),
   },
-  {
-    id: 14,
-    name: "დიდი თოჯინების სახლი (ავეჯით)",
-    price: 120.0,
-    age: "5-8",
-    category: "განვითარებადი",
-    gender: "გოგოსთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/f3a4b7/333333?text=TOY+DOLLHOUSE+SET`,
-  },
-  {
-    id: 15,
-    name: "პულტიანი ტრიუკი მანქანა",
-    price: 65.0,
-    age: "5-8",
-    category: "სტანდარტული",
-    gender: "ბიჭისთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/ff9800/FFFFFF?text=RC+STUNT+VEHICLE`,
-  },
-
-  // --- 8+ წლის ასაკისთვის (STEM, სტრატეგია) ---
   {
     id: 16,
+    name: "სამეცნიერო ექსპერიმენტების ნაკრები",
+    price: 49.99,
+    age: "5-8",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    // 5988523: მიკროსკოპი და ლაბორატორია (დამატებულია Pexels-დან)
+    image: getPexelsImage("5988523"),
+  },
+
+  // --- 8+ წლის ასაკისთვის (STEM, ჰობი) ---
+  {
+    id: 17,
     name: "LEGO ნაკრები (დიდი კოშკი)",
     price: 89.5,
     age: "8+",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/28a745/FFFFFF?text=LEGO+ARCHITECTURE`,
-  },
-  {
-    id: 17,
-    name: "მიკროსკოპი (საბავშვო)",
-    price: 49.99,
-    age: "8+",
-    category: "განვითარებადი",
-    gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/2196f3/FFFFFF?text=CHILDREN+MICROSCOPE+KIT`,
+    // 261765: LEGO ბლოკები (დამატებულია Pexels-დან)
+    image: getPexelsImage("261765"),
   },
   {
     id: 18,
-    name: "კონსტრუქტორი (მექანიკური)",
-    price: 40.0,
+    name: "დრონი (საბაზისო მოდელი)",
+    price: 110.0,
     age: "8+",
-    category: "განვითარებადი",
+    category: "სტანდარტული",
     gender: "ბიჭისთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/607d8b/FFFFFF?text=MECHANICAL+KIT`,
+    // 4443491: დრონის მართვა (დამატებულია Pexels-დან)
+    image: getPexelsImage("4443491"),
   },
   {
     id: 19,
-    name: "სამაგიდო თამაში (სტრატეგიული)",
-    price: 39.99,
+    name: "3D კალამი",
+    price: 85.0,
     age: "8+",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/8a2be2/FFFFFF?text=STRATEGY+BOARDGAME`,
+    // 6408226: 3D კალამი და პლასტმასი (დამატებულია Pexels-დან)
+    image: getPexelsImage("6408226"),
   },
   {
     id: 20,
@@ -188,7 +209,8 @@ const products = [
     age: "8+",
     category: "განვითარებადი",
     gender: "გოგოსთვის",
-    image: `https://placehold.co/${IMAGE_SIZE}/ff69b4/FFFFFF?text=CRAFT+KIT`,
+    // 5649931: ხელნაკეთი ყვავილი (დამატებულია Pexels-დან)
+    image: getPexelsImage("5649931"),
   },
 ];
 
