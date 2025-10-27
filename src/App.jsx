@@ -2,14 +2,16 @@ import React, { useState, useMemo } from "react";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 import FilterSidebar from "./components/FilterSidebar";
+import CheckoutForm from "./components/CheckoutForm"; // <-- CheckoutForm იმპორტი
 import productsData from "./data/products";
 import "./App.css";
 
 function App() {
   const [products] = useState(productsData);
   const [cart, setCart] = useState([]);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false); // ფორმის ხილვადობის მდგომარეობა
 
-  // ... (ფილტრაციის ლოგიკა უცვლელია) ...
+  // ფილტრაციის მდგომარეობა
   const [filters, setFilters] = useState({
     category: "ყველა",
     gender: "ყველასთვის",
@@ -32,7 +34,7 @@ function App() {
     });
   }, [products, filters]);
 
-  // კალათაში დამატების ლოგიკა (უცვლელია)
+  // კალათაში დამატების ლოგიკა
   const addToCart = (productToAdd) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === productToAdd.id);
@@ -49,7 +51,7 @@ function App() {
     });
   };
 
-  // კალათიდან ამოღების ლოგიკა (უცვლელია)
+  // კალათიდან ამოღების ლოგიკა
   const removeFromCart = (productId) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === productId);
@@ -66,18 +68,52 @@ function App() {
     });
   };
 
-  // 6. ახალი: "ყიდვის" (Checkout) ლოგიკა
-  const handleCheckout = () => {
+  // 1. შეკვეთის დაწყება: ფორმის გახსნა
+  const handleStartCheckout = () => {
     if (cart.length > 0) {
-      // კალათის დაცარიელება
-      setCart([]);
-      // შეტყობინების ჩვენება
-      alert("✅ შეკვეთა წარმატებით გაფორმდა! მალე დაგიკავშირდებით.");
+      setIsCheckoutOpen(true);
     } else {
       alert("კალათა ცარიელია! დაამატეთ პროდუქტები ყიდვის გასაფორმებლად.");
     }
   };
 
+  // 2. შეკვეთის დასრულება (ფორმის გაგზავნა)
+  const handleOrderSubmit = (formData) => {
+    const totalAmount = cart.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+
+    // აქ ხდება რეალური შეკვეთის გაგზავნა სერვერზე... (ამ ეტაპზე კონსოლში ვბეჭდავთ)
+    console.log("შეკვეთის მონაცემები:", formData);
+    console.log("პროდუქტები:", cart);
+    console.log("ჯამი:", totalAmount.toFixed(2));
+
+    // კალათის დაცარიელება და ფორმის დახურვა
+    setCart([]);
+    setIsCheckoutOpen(false);
+    alert(`✅ შეკვეთა ${formData.name} (ჯამი: ${totalAmount.toFixed(2)} GEL) წარმატებით გაფორმდა! მალე დაგიკავშირდებით.`);
+  };
+
+  // თუ isCheckoutOpen არის true, ვაჩვენებთ მხოლოდ CheckoutForm-ს
+  if (isCheckoutOpen) {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>🛒 შეკვეთის გაფორმება</h1>
+        </header>
+        <div className="main-container">
+          <CheckoutForm
+            cartItems={cart}
+            onSubmit={handleOrderSubmit}
+            onCancel={() => setIsCheckoutOpen(false)} // უკან დაბრუნება
+          />
+        </div>
+      </div>
+    );
+  }
+
+  // ძირითადი ხედი (პროდუქტები და კალათა)
   return (
     <div className="App">
       <header className="App-header">
@@ -98,7 +134,7 @@ function App() {
             <Cart
               cartItems={cart}
               onRemoveFromCart={removeFromCart}
-              onCheckout={handleCheckout} // ფუნქციის გადაცემა Cart კომპონენტში
+              onCheckout={handleStartCheckout} // ფორმის გამხსნელი ფუნქცია
             />
           </div>
         </div>

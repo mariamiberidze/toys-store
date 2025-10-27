@@ -1,7 +1,7 @@
 
 import React from "react";
 
-// ვიღებთ onCheckout props-ს
+// ვიღებთ onCheckout props-ს (ფორმის გასახსნელად)
 function Cart({ cartItems, onRemoveFromCart, onCheckout }) {
   const total = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -31,9 +31,9 @@ function Cart({ cartItems, onRemoveFromCart, onCheckout }) {
             ))}
           </ul>
           <h3>ჯამი: {total.toFixed(2)} GEL</h3>
-          {/* onCheckout ფუნქციის მიბმა ღილაკზე */}
+          {/* onCheckout ფუნქციის მიბმა ღილაკზე, რომელიც ფორმას ხსნის */}
           <button className="checkout-btn" onClick={onCheckout}>
-            ყიდვა
+            ყიდვის გაფორმება
           </button>
         </>
       )}
