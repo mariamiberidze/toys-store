@@ -1,9 +1,7 @@
-// src/components/ProductCard.jsx
-
 import React from "react";
 
 function ProductCard({ product, onAddToCart }) {
-  // imageUrl არის პირდაპირ API-ის მისამართი, ფაილების ატვირთვა აღარ გვჭირდება
+  // imageUrl არის პროდუქტის image ველი products.js-დან
   const imageUrl = product.image;
 
   return (

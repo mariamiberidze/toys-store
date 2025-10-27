@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 
 function ProductList({ products, onAddToCart }) {
   if (products.length === 0) {
-    return <p>ამ ფილტრებით პროდუქტები ვერ მოიძებნა.</p>;
+    return <p className="no-products">ამ ფილტრებით პროდუქტები ვერ მოიძებნა.</p>;
   }
 
   return (

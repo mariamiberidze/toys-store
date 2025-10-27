@@ -1,6 +1,8 @@
+
 import React from "react";
 
-function Cart({ cartItems, onRemoveFromCart }) {
+// ვიღებთ onCheckout props-ს
+function Cart({ cartItems, onRemoveFromCart, onCheckout }) {
   const total = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -13,7 +15,7 @@ function Cart({ cartItems, onRemoveFromCart }) {
         <p>კალათა ცარიელია. დაამატეთ პროდუქტები!</p>
       ) : (
         <>
-          <ul>
+          <ul className="cart-items-list">
             {cartItems.map((item) => (
               <li key={item.id}>
                 {item.name} ({item.quantity} ც.) -{" "}
@@ -21,7 +23,7 @@ function Cart({ cartItems, onRemoveFromCart }) {
                 {/* ამოღების ღილაკი: ამცირებს რაოდენობას 1-ით, ან შლის თუ 1-ია */}
                 <button
                   onClick={() => onRemoveFromCart(item.id)}
-                  className="remove-btn"
+                  className="remove-from-cart-btn"
                 >
                   წაშლა (ერთი ცალი)
                 </button>
@@ -29,7 +31,10 @@ function Cart({ cartItems, onRemoveFromCart }) {
             ))}
           </ul>
           <h3>ჯამი: {total.toFixed(2)} GEL</h3>
-          <button className="checkout-btn">ყიდვა</button>
+          {/* onCheckout ფუნქციის მიბმა ღილაკზე */}
+          <button className="checkout-btn" onClick={onCheckout}>
+            ყიდვა
+          </button>
         </>
       )}
     </div>

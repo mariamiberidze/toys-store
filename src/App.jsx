@@ -3,25 +3,23 @@ import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 import FilterSidebar from "./components/FilterSidebar";
 import productsData from "./data/products";
-import "./App.css"; // სტილების იმპორტი
+import "./App.css";
 
 function App() {
   const [products] = useState(productsData);
   const [cart, setCart] = useState([]);
 
-  // 1. ფილტრაციის საწყისი მდგომარეობა
+  // ... (ფილტრაციის ლოგიკა უცვლელია) ...
   const [filters, setFilters] = useState({
     category: "ყველა",
     gender: "ყველასთვის",
     age: "ყველა",
   });
 
-  // 2. ფილტრების განახლების ფუნქცია
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
   };
 
-  // 3. გაფილტრული პროდუქტების ლოგიკა (ოპტიმიზებული useMemo-ს გამოყენებით)
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
       const isCategoryMatch =
@@ -34,42 +32,50 @@ function App() {
     });
   }, [products, filters]);
 
-  // 4. კალათაში დამატების ლოგიკა
+  // კალათაში დამატების ლოგიკა (უცვლელია)
   const addToCart = (productToAdd) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === productToAdd.id);
 
       if (existingItem) {
-        // თუ უკვე არის, გაზარდე რაოდენობა
         return prevCart.map((item) =>
           item.id === productToAdd.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        // თუ ახალია, დაამატე 1 რაოდენობით
         return [...prevCart, { ...productToAdd, quantity: 1 }];
       }
     });
   };
 
-  // 5. კალათიდან ამოღების ლოგიკა (რაოდენობის შემცირება)
+  // კალათიდან ამოღების ლოგიკა (უცვლელია)
   const removeFromCart = (productId) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === productId);
 
       if (existingItem && existingItem.quantity > 1) {
-        // შეამცირე რაოდენობა
         return prevCart.map((item) =>
           item.id === productId
             ? { ...item, quantity: item.quantity - 1 }
             : item
         );
       } else {
-        // წაშალე პროდუქტი მთლიანად (თუ რაოდენობა 1-ია)
         return prevCart.filter((item) => item.id !== productId);
       }
     });
+  };
+
+  // 6. ახალი: "ყიდვის" (Checkout) ლოგიკა
+  const handleCheckout = () => {
+    if (cart.length > 0) {
+      // კალათის დაცარიელება
+      setCart([]);
+      // შეტყობინების ჩვენება
+      alert("✅ შეკვეთა წარმატებით გაფორმდა! მალე დაგიკავშირდებით.");
+    } else {
+      alert("კალათა ცარიელია! დაამატეთ პროდუქტები ყიდვის გასაფორმებლად.");
+    }
   };
 
   return (
@@ -89,7 +95,11 @@ function App() {
           </div>
 
           <div className="cart-section">
-            <Cart cartItems={cart} onRemoveFromCart={removeFromCart} />
+            <Cart
+              cartItems={cart}
+              onRemoveFromCart={removeFromCart}
+              onCheckout={handleCheckout} // ფუნქციის გადაცემა Cart კომპონენტში
+            />
           </div>
         </div>
       </div>

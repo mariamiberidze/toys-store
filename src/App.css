@@ -132,6 +132,9 @@ select {
   width: 100%;
   margin-top: 10px;
 }
+.product-card .add-to-cart-btn:hover {
+  background-color: #1e7e34;
+}
 
 /* --- კალათის სექცია (მარჯვენა საიდბარი) --- */
 .cart-section {
@@ -173,6 +176,10 @@ select {
   font-size: 0.75em;
   margin-left: 10px;
   border-radius: 3px;
+  white-space: nowrap; /* ტექსტი რომ არ გადავიდეს */
+}
+.cart .remove-from-cart-btn:hover {
+  background-color: #c82333;
 }
 
 .cart .checkout-btn {
@@ -180,4 +187,7 @@ select {
   color: white;
   margin-top: 20px;
   width: 100%;
+}
+.cart .checkout-btn:hover {
+  background-color: #0056b3;
 }
