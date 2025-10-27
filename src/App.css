@@ -10,13 +10,13 @@ body {
   padding: 0;
   /* გამოიყენება თანამედროვე სისტემური შრიფტი */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-  background-color: #f5f7fa; /* ღია, რბილი ნაცრისფერი ფონი */
+  background-color: #f8f3f3; /* ღია, რბილი ნაცრისფერი ფონი */
   color: #343a40; /* მუქი, მკაფიო ტექსტი */
   min-height: 100vh;
 }
 
 h1, h2, h3 {
-  color: #17a2b8; /* ფირუზისფერი/მოცისფრო აქცენტი */
+  color: #3c4247; /* ფირუზისფერი/მოცისფრო აქცენტი */
   font-weight: 700;
   letter-spacing: -0.5px; /* თანამედროვე ეფექტი */
 }
@@ -38,7 +38,7 @@ button {
 }
 
 button:hover {
-  background-color: #e9ecef;
+  background-color: #efe9ea;
 }
 
 select {
@@ -53,7 +53,7 @@ select {
 
 /* --- ჰედერი (სათაურის ფონი) --- */
 .App-header {
-  background-color: #007bff; /* კლასიკური, ძლიერი ლურჯი */
+  background-color: #f9bbef; /* კლასიკური, ძლიერი ლურჯი */
   padding: 25px;
   color: white;
   margin-bottom: 50px; /* მეტი სივრცე */
@@ -84,7 +84,6 @@ select {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* თანამედროვე ჩრდილი */
   height: auto; 
   position: static; 
-  border-left: 5px solid #17a2b8; /* აქცენტის ხაზი */
 
   /* შიდა განლაგება */
   display: flex;
@@ -161,20 +160,20 @@ select {
 
 .product-card .price {
     font-size: 1.3em;
-    color: #28a745; 
+    color: #494747; 
     font-weight: 700;
     margin: 5px 0 15px;
 }
 
 .product-card .add-to-cart-btn {
-  background-color: #28a745; 
+  background-color: #43cb63; 
   color: white;
   width: 100%;
   margin-top: 10px;
   border: none;
 }
 .product-card .add-to-cart-btn:hover {
-  background-color: #218838;
+  background-color: #f6bfea;
 }
 
 /* --- კალათის სექცია --- */
@@ -217,7 +216,7 @@ select {
 }
 
 .cart .remove-from-cart-btn {
-  background-color: #dc3545; 
+  background-color: #ed3636; 
   color: white;
   padding: 4px 8px;
   font-size: 0.7em;
@@ -226,7 +225,7 @@ select {
   border: none;
 }
 .cart .remove-from-cart-btn:hover {
-  background-color: #c82333;
+  background-color: #a30404;
 }
 
 .cart h3 {
@@ -236,12 +235,12 @@ select {
 }
 
 .cart .checkout-btn {
-  background-color: #0a0a0a; 
+  background-color: #242323; 
   color: white;
   margin-top: 25px;
   width: 100%;
   border: none;
 }
 .cart .checkout-btn:hover {
-  background-color: #0056b3;
+  background-color: #16bc1b;
 }
