@@ -47,7 +47,7 @@ function CheckoutForm({ cartItems, onSubmit, onCancel }) {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="ანა მელაძე"
+                placeholder="სახელი და გვარი"
                 required
               />
             </div>

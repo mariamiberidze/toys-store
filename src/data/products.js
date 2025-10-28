@@ -1,11 +1,14 @@
-// src/data/products.js - განახლებული სია Pexels-ის რეალური სურათების გამოყენებით
+// src/data/products.js - განახლებული სია Pexels, Shutterstock და iStockphoto სურათებით
 
-// Pexels-ის პირდაპირი ლინკის ფორმატი:
+// ფუნქცია Pexels-ის ID-ებისთვის (ძველი პროდუქტების შენარჩუნებისთვის)
 const getPexelsImage = (id) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=300`;
 
+// ფიქსირებული URL-ები Shutterstock-დან და iStockphoto-დან
 const products = [
+  // =========================================================
   // --- 0-2 წლის ასაკისთვის (ხის და რბილი სათამაშოები) ---
+  // =========================================================
   {
     id: 1,
     name: "ხის პატარა ცხენი (ქანა)",
@@ -13,7 +16,6 @@ const products = [
     age: "0-2",
     category: "სტანდარტული",
     gender: "ყველასთვის",
-    // 7938006: ხის ქანა ცხენი (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("7938006"),
   },
   {
@@ -23,7 +25,6 @@ const products = [
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 6692878: ბავშვი ხის კოშკით თამაშობს (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("6692878"),
   },
   {
@@ -33,7 +34,6 @@ const products = [
     age: "0-2",
     category: "სტანდარტული",
     gender: "ყველასთვის",
-    // 1029208: დათუნია საქანელაზე (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("1029208"),
   },
   {
@@ -43,7 +43,6 @@ const products = [
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 7335412: ფერადი ასოები/აბები (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("7335412"),
   },
   {
@@ -53,7 +52,6 @@ const products = [
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 26219895: ბავშვი ეტლთან და სათამაშო ავეჯთან
     image: getPexelsImage("26219895"),
   },
   {
@@ -63,11 +61,77 @@ const products = [
     age: "0-2",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 6219111: ხის ფრინველი (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("6219111"),
   },
-
+  {
+    id: 21,
+    name: "ხის ჭოჭინა (Rattle) და ბურთები",
+    price: 15.99,
+    age: "0-2",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    image: getPexelsImage("3875217"),
+  },
+  {
+    id: 22,
+    name: "დათუნიები პლედის პერანგებში",
+    price: 28.5,
+    age: "0-2",
+    category: "სტანდარტული",
+    gender: "ყველასთვის",
+    image: getPexelsImage("34402768"),
+  },
+  
+  // *** ახალი დამატება: ჩვილის სურათები (0-2) ***
+  {
+    id: 25,
+    name: "რბილი თოჯინა (გოგონა)",
+    price: 32.0,
+    age: "0-2",
+    category: "რბილი სათამაშო",
+    gender: "გოგოსთვის",
+    image: "https://www.shutterstock.com/image-generated/advertising-product-photo-toddler-girl-bedroom-2585155533",
+  },
+  {
+    id: 26,
+    name: "ხელნაკეთი მობილი (კოსმოსი)",
+    price: 49.99,
+    age: "0-2",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    image: "https://www.shutterstock.com/image-photo/baby-crib-mobile-handmade-form-space-2245887061",
+  },
+  {
+    id: 27,
+    name: "ჩვილის საწოლის სათამაშო",
+    price: 25.0,
+    age: "0-2",
+    category: "სტანდარტული",
+    gender: "ბიჭისთვის",
+    image: "https://www.shutterstock.com/image-photo/cute-baby-boy-playing-hanging-toys-2202067003",
+  },
+  {
+    id: 28,
+    name: "ფერადი რეზინის იხვები (4 ცალი)",
+    price: 14.5,
+    age: "0-2",
+    category: "სტანდარტული",
+    gender: "ყველასთვის",
+    image: "https://www.shutterstock.com/image-photo/4-orange-yellow-rubber-ducks-on-1610834662",
+  },
+  {
+    id: 29,
+    name: "ხის სასიარულო (Pusher)",
+    price: 65.0,
+    age: "0-2",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    image: "https://www.shutterstock.com/image-photo/cute-baby-making-first-steps-toy-2364577157",
+  },
+  
+  // =========================================================
   // --- 3-5 წლის ასაკისთვის (ხის, როლური თამაში) ---
+  // =========================================================
   {
     id: 7,
     name: "ხის სათამაშო კამერა",
@@ -75,7 +139,6 @@ const products = [
     age: "3-5",
     category: "სტანდარტული",
     gender: "ყველასთვის",
-    // 6941683: ხის კამერა (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("6941683"),
   },
   {
@@ -85,7 +148,6 @@ const products = [
     age: "3-5",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 1595087: ფერადი ხის ბლოკები (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("1595087"),
   },
   {
@@ -95,7 +157,6 @@ const products = [
     age: "3-5",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 7269670: ხის დახარისხების თამაში (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("7269670"),
   },
   {
@@ -105,7 +166,6 @@ const products = [
     age: "3-5",
     category: "სტანდარტული",
     gender: "გოგოსთვის",
-    // 1639729: პატარა კაბა (დამატებულია Pexels-დან)
     image: getPexelsImage("1639729"),
   },
   {
@@ -115,7 +175,6 @@ const products = [
     age: "3-5",
     category: "სტანდარტული",
     gender: "ბიჭისთვის",
-    // 255514: პატარა თვითმფრინავი (თქვენს მიერ მოწოდებული)
     image: getPexelsImage("255514"),
   },
   {
@@ -125,11 +184,68 @@ const products = [
     age: "3-5",
     category: "სტანდარტული",
     gender: "ყველასთვის",
-    // 4165991: ფერადი პლასტელინი (დამატებულია Pexels-დან)
     image: getPexelsImage("4165991"),
   },
-
+  {
+    id: 23,
+    name: "ხელნაკეთი ქსოვილის თოჯინები",
+    price: 45.0,
+    age: "3-5",
+    category: "სტანდარტული",
+    gender: "გოგოსთვის",
+    image: getPexelsImage("16228973"),
+  },
+  {
+    id: 24,
+    name: "ფერადი სათამაშო მანქანები (4 ცალი)",
+    price: 39.0,
+    age: "3-5",
+    category: "სტანდარტული",
+    gender: "ბიჭისთვის",
+    image: getPexelsImage("2767817"),
+  },
+  
+  // *** ახალი დამატება: 3-5 წლის სურათები ***
+  {
+    id: 30,
+    name: "ხის სამუშაო ყუთი (იარაღები)",
+    price: 55.0,
+    age: "3-5",
+    category: "განვითარებადი",
+    gender: "ბიჭისთვის",
+    image: "https://www.istockphoto.com/photo/wooden-work-toolbox-isolated-on-white-background-gm186818736-15291081",
+  },
+  {
+    id: 31,
+    name: "დიდი ამწე (Crane) მოდელი",
+    price: 78.0,
+    age: "3-5",
+    category: "სტანდარტული",
+    gender: "ბიჭისთვის",
+    image: "https://www.istockphoto.com/photo/crane-gm183804142-15665696",
+  },
+  {
+    id: 32,
+    name: "ფერადი ხის ცისარტყელა",
+    price: 29.99,
+    age: "3-5",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    image: "https://www.shutterstock.com/image-photo/one-colorful-rainbow-isolated-on-white-2336978163",
+  },
+  {
+    id: 33,
+    name: "ფორმის დამხარისხებელი სათამაშო",
+    price: 32.5,
+    age: "3-5",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    image: "https://www.shutterstock.com/image-photo/baby-girl-playing-educational-toy-nursery-372315763",
+  },
+  
+  // =========================================================
   // --- 5-8 წლის ასაკისთვის (კონსტრუქცია, რობოტიკა) ---
+  // =========================================================
   {
     id: 13,
     name: "რობოტი ტრანსფორმერი (მოდელი)",
@@ -137,7 +253,6 @@ const products = [
     age: "5-8",
     category: "განვითარებადი",
     gender: "ბიჭისთვის",
-    // 3862601: პატარა რობოტი (დამატებულია Pexels-დან)
     image: getPexelsImage("3862601"),
   },
   {
@@ -147,7 +262,6 @@ const products = [
     age: "5-8",
     category: "განვითარებადი",
     gender: "გოგოსთვის",
-    // 2100863: თოჯინების სახლი (დამატებულია Pexels-დან)
     image: getPexelsImage("2100863"),
   },
   {
@@ -157,7 +271,6 @@ const products = [
     age: "5-8",
     category: "სტანდარტული",
     gender: "ბიჭისთვის",
-    // 3396590: სათამაშო მანქანები (დამატებულია Pexels-დან)
     image: getPexelsImage("3396590"),
   },
   {
@@ -167,11 +280,50 @@ const products = [
     age: "5-8",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 5988523: მიკროსკოპი და ლაბორატორია (დამატებულია Pexels-დან)
     image: getPexelsImage("5988523"),
   },
+  
+  // *** ახალი დამატება: 5-8 წლის სურათები ***
+  {
+    id: 34,
+    name: "თუნუქის რეტრო რობოტი",
+    price: 39.0,
+    age: "5-8",
+    category: "სტანდარტული",
+    gender: "ყველასთვის",
+    image: "https://www.istockphoto.com/photo/retro-robot-wound-up-with-key-isolated-with-clipping-path-gm496953956-78850487",
+  },
+  {
+    id: 35,
+    name: "Barbie - მოდელი (კაბით)",
+    price: 35.0,
+    age: "5-8",
+    category: "სტანდარტული",
+    gender: "გოგოსთვის",
+    image: "https://www.shutterstock.com/image-photo/paris-france-november-27-2021-barbie-2081916787",
+  },
+  {
+    id: 36,
+    name: "Barbie - მოდელი (ღიმილით)",
+    price: 38.0,
+    age: "5-8",
+    category: "სტანდარტული",
+    gender: "გოგოსთვის",
+    image: "https://www.shutterstock.com/image-generated/blonde-fashion-barbie-doll-smiling-illustration-2572980401",
+  },
+  {
+    id: 37,
+    name: "Barbie - დისფლეი",
+    price: 32.0,
+    age: "5-8",
+    category: "სტანდარტული",
+    gender: "გოგოსთვის",
+    image: "https://www.shutterstock.com/image-photo/barbie-dolls-on-store-shelf-fashion-2200867039",
+  },
 
+  // =========================================================
   // --- 8+ წლის ასაკისთვის (STEM, ჰობი) ---
+  // =========================================================
   {
     id: 17,
     name: "LEGO ნაკრები (დიდი კოშკი)",
@@ -179,7 +331,6 @@ const products = [
     age: "8+",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 261765: LEGO ბლოკები (დამატებულია Pexels-დან)
     image: getPexelsImage("261765"),
   },
   {
@@ -189,7 +340,6 @@ const products = [
     age: "8+",
     category: "სტანდარტული",
     gender: "ბიჭისთვის",
-    // 4443491: დრონის მართვა (დამატებულია Pexels-დან)
     image: getPexelsImage("4443491"),
   },
   {
@@ -199,7 +349,6 @@ const products = [
     age: "8+",
     category: "განვითარებადი",
     gender: "ყველასთვის",
-    // 6408226: 3D კალამი და პლასტმასი (დამატებულია Pexels-დან)
     image: getPexelsImage("6408226"),
   },
   {
@@ -209,8 +358,54 @@ const products = [
     age: "8+",
     category: "განვითარებადი",
     gender: "გოგოსთვის",
-    // 5649931: ხელნაკეთი ყვავილი (დამატებულია Pexels-დან)
     image: getPexelsImage("5649931"),
+  },
+  
+  // *** ახალი დამატება: 8+ წლის სურათები ***
+  {
+    id: 38,
+    name: "Barbie - ბარბის სახლის აქსესუარები",
+    price: 45.0,
+    age: "8+",
+    category: "სტანდარტული",
+    gender: "გოგოსთვის",
+    image: "https://www.shutterstock.com/image-generated/barbies-house-accessories-alegre-colorido-caricato-2502491445",
+  },
+  {
+    id: 39,
+    name: "Barbie - ბარბის სახლი (Lego სტილი)",
+    price: 130.0,
+    age: "8+",
+    category: "განვითარებადი",
+    gender: "გოგოსთვის",
+    image: "https://www.shutterstock.com/image-generated/barbie-house-vibrant-colors-lego-style-2547978631",
+  },
+  {
+    id: 40,
+    name: "Barbie - შეფუთვა (Display)",
+    price: 39.0,
+    age: "8+",
+    category: "სტანდარტული",
+    gender: "გოგოსთვის",
+    image: "https://www.shutterstock.com/image-generated/barbie-packaging-which-doll-that-has-2588432811",
+  },
+  {
+    id: 41,
+    name: "Barbie - პორტრეტი",
+    price: 29.99,
+    age: "8+",
+    category: "სტანდარტული",
+    gender: "გოგოსთვის",
+    image: "https://www.shutterstock.com/image-photo/mulhouse-france-22-may-2021-portrait-1979123945",
+  },
+  {
+    id: 42,
+    name: "Globe (საბავშვო რუკა)",
+    price: 65.0,
+    age: "8+",
+    category: "განვითარებადი",
+    gender: "ყველასთვის",
+    image: "https://images.pexels.com/photos/191360/pexels-photo-191360.jpeg",
   },
 ];
 
