@@ -1,4 +1,4 @@
-/* src/App.css - პროფესიონალური, თანამედროვე ვიზუალი */
+/* --- APP.CSS: ორიგინალური ფერები, მაგრამ თანამედროვე ტიპოგრაფია და ინტერვალი --- */
 
 /* --- RESET და ძირითადი სტილები --- */
 * {
@@ -8,137 +8,138 @@
 body {
   margin: 0;
   padding: 0;
-  /* გამოიყენება თანამედროვე სისტემური შრიფტი */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  /* Poppins შრიფტი */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #f8f3f3; /* ღია, რბილი ნაცრისფერი ფონი */
-  color: #343a40; /* მუქი, მკაფიო ტექსტი */
+  background-color: #f8f3f3; /* ორიგინალი ფონი */
+  color: #343a40; /* ორიგინალი ტექსტის ფერი */
   min-height: 100vh;
 }
 
 h1,
 h2,
 h3 {
-  color: #3c4247; /* ფირუზისფერი/მოცისფრო აქცენტი */
+  color: #3C3C3C; 
   font-weight: 700;
-  letter-spacing: -0.5px; /* თანამედროვე ეფექტი */
+  letter-spacing: -0.5px; 
 }
 
 .App {
   text-align: center;
 }
 
-/* --- ღილაკები და ფორმის ელემენტები --- */
+/* --- ღილაკები და ფორმის ელემენტები (ინტერვალი) --- */
 button {
   cursor: pointer;
-  padding: 11px 16px;
-  border: 1px solid #ced4da;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  padding: 12px 18px; /* გაზრდილი padding */
+  border: 1px solid #dee2e6;
+  border-radius: 8px; 
+  transition: all 0.3s ease;
   font-weight: 600;
   background-color: #ffffff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* ძალიან მსუბუქი ჩრდილი */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
 }
 
 button:hover {
-  background-color: #efe9ea;
+  background-color: #f8f9fa;
+  transform: translateY(-1px); 
 }
 
 select {
-  padding: 9px;
+  padding: 10px;
   border: 1px solid #ced4da;
-  border-radius: 6px;
+  border-radius: 8px; 
   margin-bottom: 15px;
   width: 100%;
   background-color: white;
   color: #495057;
 }
 
-/* --- ჰედერი (სათაურის ფონი) --- */
+/* --- ჰედერი (App-header) --- */
 .App-header {
-  background-color: #f9bbef; /* ვარდისფერი აქცენტი */
-  padding: 25px;
+  background-color: #f9bbef; /* ორიგინალი აქცენტის ფერი */
+  padding: 30px; /* გაზრდილი padding */
   color: white;
-  margin-bottom: 50px; /* მეტი სივრცე */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 60px; /* დიდი ინტერვალი */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
 }
 .App-header h1 {
   color: white;
-  font-size: 2.5em;
+  font-size: 2.8em; /* გაზრდილი შრიფტი */
   text-transform: uppercase;
+  font-weight: 800;
 }
 
-/* --- მთავარი განლაგება --- */
+/* --- მთავარი კონტეინერი --- */
 .main-container {
-  display: block; /* ფილტრები ზემოთ არის */
+  display: block; 
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 30px 60px;
+  padding: 0 40px 80px; /* გაზრდილი padding */
   text-align: left;
 }
 
-/* --- ფილტრაციის პანელი (ჰორიზონტალური, ზედა ნაწილში) --- */
+/* --- ფილტრაციის პანელი (ინტერვალი) --- */
 .filter-sidebar {
   width: 100%;
-  padding: 25px 30px;
-  margin-bottom: 30px;
+  padding: 30px 40px; /* გაზრდილი padding */
+  margin-bottom: 40px; /* გაზრდილი margin */
   background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* თანამედროვე ჩრდილი */
+  border-radius: 12px; 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); 
   height: auto;
   position: static;
-
-  /* შიდა განლაგება */
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 15px; /* გაზრდილი gap */
   justify-content: flex-start;
 }
 .filter-sidebar h3 {
   width: 100%;
-  color: #495057;
+  color: #343a40;
   border-bottom: 1px solid #e9ecef;
   padding-bottom: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 25px; 
+  font-size: 1.6em;
 }
 .filter-sidebar div {
   flex: 1;
-  min-width: 200px;
+  min-width: 220px;
 }
 .filter-sidebar h4 {
   margin-top: 0;
-  margin-bottom: 10px;
-  color: #495057;
+  margin-bottom: 8px;
+  color: #6c757d;
   font-size: 0.9em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* --- კონტენტი (პროდუქტები + კალათა) --- */
+/* --- კონტენტი (ინტერვალი) --- */
 .content {
   display: flex;
   flex-grow: 1;
+  gap: 30px; 
 }
 
-/* --- პროდუქტების სია --- */
+/* --- პროდუქტების სექცია (ინტერვალი) --- */
 .product-section {
   flex: 3;
-  margin-right: 30px;
 }
 
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 25px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+  gap: 30px; 
+  margin-top: 30px;
 }
 
-/* --- პროდუქტის ბარათი (თანამედროვე ვიზუალი) --- */
+/* --- პროდუქტის ბარათი (ვიზუალი) --- */
 .product-card {
-  border: 1px solid #e9ecef;
-  padding: 20px;
-  border-radius: 10px;
+  border: 1px solid #f1f1f1;
+  padding: 25px; /* გაზრდილი padding */
+  border-radius: 12px; 
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   background-color: white;
   overflow: hidden;
   display: flex;
@@ -148,54 +149,58 @@ select {
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(23, 162, 184, 0.15); /* აქცენტის ჩრდილი ჰოვერზე */
+  transform: translateY(-3px); 
+  box-shadow: 0 10px 25px rgba(249, 187, 239, 0.5); /* ჩრდილი ორიგინალი ფერით */
 }
 
 .product-image {
   width: 100%;
-  height: 220px;
+  height: 250px; /* გაზრდილი სიმაღლე */
   object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 15px;
+  border-radius: 8px; 
+  margin-bottom: 20px;
 }
 
 .product-card .price {
-  font-size: 1.3em;
-  color: #494747;
+  font-size: 1.5em; 
+  color: #f9bbef; /* ორიგინალი აქცენტი ფასზე */
   font-weight: 700;
-  margin: 5px 0 15px;
+  margin: 8px 0 18px;
 }
 
 .product-card .add-to-cart-btn {
-  background-color: #43cb63; /* მწვანე აქცენტი */
+  background-color: #f9bbef; /* ორიგინალი აქცენტის ფერი */
   color: white;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 15px;
   border: none;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(249, 187, 239, 0.5);
 }
 .product-card .add-to-cart-btn:hover {
-  background-color: #f6bfea; /* ვარდისფერი ჰოვერი */
+  background-color: #e6a7da;
+  transform: translateY(-1px);
 }
 
-/* --- კალათის სექცია --- */
+/* --- კალათის სექცია (ინტერვალი) --- */
 .cart-section {
   flex: 1;
   max-width: 380px;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   height: fit-content;
   position: sticky;
   top: 30px;
-  border: 1px solid #ced4da;
+  border: 1px solid #e9ecef;
 }
 .cart-section h2 {
-  color: #2c2c2c;
+  color: #343a40;
   border-bottom: 1px solid #e9ecef;
   padding-bottom: 15px;
   margin-bottom: 20px;
+  font-size: 1.8em;
 }
 
 .cart-items-list {
@@ -218,61 +223,63 @@ select {
 }
 
 .cart .remove-from-cart-btn {
-  background-color: #ed3636;
+  background-color: #dc3545; 
   color: white;
-  padding: 4px 8px;
-  font-size: 0.7em;
+  padding: 5px 10px;
+  font-size: 0.8em;
   margin-left: 10px;
-  border-radius: 4px;
+  border-radius: 6px;
   border: none;
 }
 .cart .remove-from-cart-btn:hover {
-  background-color: #a30404;
+  background-color: #c82333;
 }
 
 .cart h3 {
-  margin-top: 25px;
-  font-size: 1.6em;
+  margin-top: 30px;
+  font-size: 1.7em;
   color: #343a40;
 }
 
 .cart .checkout-btn {
-  background-color: #242323; /* მუქი აქცენტი */
+  background-color: #f9bbef; /* ორიგინალი აქცენტის ფერი */
   color: white;
-  margin-top: 25px;
+  margin-top: 30px;
   width: 100%;
   border: none;
+  padding: 14px 20px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(249, 187, 239, 0.4);
 }
 .cart .checkout-btn:hover {
-  background-color: #43cb63; /* მწვანე ჰოვერი */
+  background-color: #e6a7da;
 }
 
-
 /* =================================================== */
-/* --- Checkout Form-ის სტილები (თანამედროვე დიზაინი) --- */
+/* --- Checkout Form-ის სტილები (ინტერვალი) --- */
 /* =================================================== */
 
 .checkout-form-container {
   max-width: 1000px; 
-  margin: 40px auto;
-  padding: 40px;
+  margin: 60px auto; 
+  padding: 50px; 
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); 
   text-align: left;
 }
 
 .checkout-main-title {
-    font-size: 2.2em;
-    color: #f9bbef; /* ვარდისფერი აქცენტი */
-    border-bottom: 2px solid #f8f3f3;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
+    font-size: 2.4em; 
+    color: #f9bbef; /* ორიგინალი აქცენტის ფერი */
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 18px;
+    margin-bottom: 40px;
 }
 
 .checkout-details-wrapper {
   display: flex;
-  gap: 40px;
+  gap: 50px; 
 }
 
 .checkout-form-area {
@@ -283,13 +290,13 @@ select {
 .order-summary-area {
   flex: 2;
   background-color: #f8f8f8; 
-  padding: 30px;
+  padding: 35px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
 }
 
 .section-title {
-    font-size: 1.4em;
+    font-size: 1.5em; 
     font-weight: 700;
     color: #495057;
     margin-bottom: 25px;
@@ -297,9 +304,9 @@ select {
     border-bottom: 1px solid #eeeeee;
 }
 
-/* --- ფორმის ველები --- */
+/* --- ფორმის ველები (ინტერვალი) --- */
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 30px; 
 }
 
 .form-group label {
@@ -315,7 +322,7 @@ select {
 .checkout-form input[type="email"],
 .checkout-form textarea {
   width: 100%;
-  padding: 14px 15px; 
+  padding: 15px 18px; 
   border: 1px solid #dee2e6;
   border-radius: 8px; 
   font-size: 1em;
@@ -325,16 +332,16 @@ select {
 
 .checkout-form input:focus,
 .checkout-form textarea:focus {
-  border-color: #f9bbef; /* ვარდისფერი ფოკუსი */
+  border-color: #f9bbef; /* ორიგინალი ფოკუსის ფერი */
   outline: none;
-  box-shadow: 0 0 0 3px rgba(249, 187, 239, 0.3); 
+  box-shadow: 0 0 0 4px rgba(249, 187, 239, 0.4); 
 }
 
 .checkout-form textarea {
-  min-height: 100px;
+  min-height: 120px;
 }
 
-/* --- შეჯამების სტილები --- */
+/* --- შეჯამების სტილები (ინტერვალი) --- */
 .cart-summary-list {
   list-style: none;
   padding: 0;
@@ -344,38 +351,39 @@ select {
 .summary-item {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 14px 0; 
   border-bottom: 1px dashed #e2e2e2;
-  font-size: 0.95em;
+  font-size: 1em;
   color: #6c757d;
 }
 
 .summary-total {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 25px;
+  padding-top: 25px;
   border-top: 1px solid #e2e2e2;
 }
 
 .final-total {
-    border-top: 2px solid #f9bbef; /* ვარდისფერი გამყოფი */
+    border-top: 3px solid #f9bbef; /* ორიგინალი აქცენტის ფერი */
     margin-top: 30px;
     padding-top: 25px;
 }
 
 .summary-total h4 {
   margin: 0;
-  font-size: 1.6em;
-  color: #3c4247;
+  font-size: 1.8em;
+  color: #343a40;
+  font-weight: 700;
 }
 
 .total-amount {
-    color: #43cb63 !important; /* მწვანე აქცენტი ფასზე */
+    color: #43cb63 !important; /* ორიგინალი მწვანე აქცენტი ფასზე */
     font-weight: 800;
 }
 
-/* --- ღილაკების სტილები --- */
+/* --- მოქმედების ღილაკები --- */
 .form-actions {
   display: flex;
   flex-direction: column;
@@ -384,7 +392,7 @@ select {
 }
 
 .order-summary-area button {
-  padding: 14px 20px;
+  padding: 16px 20px; 
   font-size: 1.1em;
   font-weight: 700;
   width: 100%;
@@ -394,24 +402,24 @@ select {
 }
 
 .submit-btn {
-  background-color: #43cb63; /* მწვანე აქცენტი */
+  background-color: #f9bbef; 
   color: white;
-  box-shadow: 0 4px 10px rgba(67, 203, 99, 0.4);
+  box-shadow: 0 4px 10px rgba(249, 187, 239, 0.4);
 }
 
 .submit-btn:hover {
-  background-color: #319e4a; /* მწვანის მუქი */
+  background-color: #e6a7da;
   transform: translateY(-2px);
 }
 
 .cancel-btn {
-  background-color: #e9ecef; /* ღია ფონი */
+  background-color: #f1f1f1; 
   color: #495057;
-  border: 1px solid #ced4da;
+  border: 1px solid #dee2e6;
   box-shadow: none;
 }
 
 .cancel-btn:hover {
-  background-color: #dee2e6;
+  background-color: #e9ecef;
   transform: none;
 }
