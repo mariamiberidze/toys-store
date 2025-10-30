@@ -22,23 +22,27 @@ function CheckoutForm({ cartItems, onSubmit, onCancel }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // ვალიდაცია
     if (!formData.name || !formData.phone || !formData.address) {
       alert("გთხოვთ შეავსოთ ყველა სავალდებულო ველი (სახელი, ტელეფონი, მისამართი).");
       return;
     }
+
+    // მონაცემების გაგზავნა
     onSubmit(formData);
   };
 
   return (
     <div className="checkout-form-container">
       <h2 className="checkout-main-title">🛍️ შეკვეთის გაფორმება</h2>
+
       <div className="checkout-details-wrapper">
-        
-        {/* --- 1. ფორმის არე --- */}
+        {/* --- მყიდველის ინფორმაცია --- */}
         <div className="checkout-form-area">
           <h3 className="section-title">მყიდველის ინფორმაცია</h3>
-          <form onSubmit={handleSubmit} className="checkout-form">
-            
+
+          <form id="checkout-form" onSubmit={handleSubmit} className="checkout-form">
             <div className="form-group">
               <label htmlFor="name">სახელი და გვარი*</label>
               <input
@@ -47,10 +51,11 @@ function CheckoutForm({ cartItems, onSubmit, onCancel }) {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="სახელი და გვარი"
+                placeholder="სახელი გვარი"
                 required
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="phone">ტელეფონის ნომერი*</label>
               <input
@@ -63,6 +68,7 @@ function CheckoutForm({ cartItems, onSubmit, onCancel }) {
                 required
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="email">ელ. ფოსტა (სურვილისამებრ)</label>
               <input
@@ -74,6 +80,7 @@ function CheckoutForm({ cartItems, onSubmit, onCancel }) {
                 placeholder="example@gmail.com"
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="address">მისამართი*</label>
               <textarea
@@ -88,45 +95,49 @@ function CheckoutForm({ cartItems, onSubmit, onCancel }) {
           </form>
         </div>
 
-        {/* --- 2. შეკვეთის შეჯამების არე --- */}
+        {/* --- შეკვეთის შეჯამება --- */}
         <div className="order-summary-area">
           <h3 className="section-title">შეკვეთის დეტალები</h3>
-          
-          <ul className="cart-summary-list">
-            {cartItems.map((item) => (
-              <li key={item.id} className="summary-item">
-                <span className="summary-name">{item.name}</span>
-                <span className="summary-qty-price">
-                  {item.quantity} ც. x {item.price.toFixed(2)} GEL
-                </span>
-              </li>
-            ))}
-          </ul>
-          
-          <div className="summary-total final-total">
-            <h4>ჯამი:</h4>
-            <h4 className="total-amount">{total.toFixed(2)} GEL</h4>
-          </div>
+
+          {cartItems.length === 0 ? (
+            <p>კალათა ცარიელია.</p>
+          ) : (
+            <>
+              <ul className="cart-summary-list">
+                {cartItems.map((item) => (
+                  <li key={item.id} className="summary-item">
+                    <span className="summary-name">{item.name}</span>
+                    <span className="summary-qty-price">
+                      {item.quantity} ც. × {item.price.toFixed(2)} GEL
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="summary-total final-total">
+                <h4>ჯამი:</h4>
+                <h4 className="total-amount">{total.toFixed(2)} GEL</h4>
+              </div>
+            </>
+          )}
 
           <div className="form-actions">
             <button type="button" onClick={onCancel} className="cancel-btn">
               ← კალათაში დაბრუნება
             </button>
-            <button 
-                type="submit" 
-                className="submit-btn" 
-                form="checkout-form-id" // მივამაგრეთ ღილაკი ფორმას
-                onClick={handleSubmit} // გამოვიყენებთ onClick-ს, რადგან ღილაკი ფორმის გარეთაა
+
+            {/* ფორმის გარეთ მყოფი submit ღილაკი — ფორმასთან დაკავშირებულია id-ით */}
+            <button
+              type="submit"
+              className="submit-btn"
+              form="checkout-form"
+              onClick={handleSubmit}
             >
               შეკვეთის გაგზავნა
             </button>
           </div>
         </div>
-
       </div>
-      {/* ფორმაზე დავამატე ID, რათა ღილაკი მიმემაგრებინა */}
-      <form id="checkout-form-id" style={{display: 'none'}} onSubmit={handleSubmit}></form>
-
     </div>
   );
 }
